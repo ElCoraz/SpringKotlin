@@ -13,7 +13,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 import javax.sql.DataSource
 import kotlin.jvm.Throws
 
-
 /**********************************************************************************************************************/
 @Configuration
 @EnableWebSecurity
