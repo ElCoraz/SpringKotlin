@@ -28,7 +28,7 @@ class AuthProvider: AuthenticationProvider{
             throw BadCredentialsException ("Wrong username or password!")
         }
 
-        return UsernamePasswordAuthenticationToken(username, password, Collections.singleton(SimpleGrantedAuthority("WEB_USER")));
+        return UsernamePasswordAuthenticationToken(username, password, Collections.singleton(SimpleGrantedAuthority("WEB_USER")))
     }
     /******************************************************************************************************************/
     override fun supports(authentication: Class<*>?): Boolean {

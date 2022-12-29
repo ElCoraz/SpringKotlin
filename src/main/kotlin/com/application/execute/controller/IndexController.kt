@@ -11,10 +11,8 @@ import springfox.documentation.annotations.ApiIgnore;
 @Controller
 class IndexController {
     /******************************************************************************************************************/
-    val url: String  = "/";
-    /******************************************************************************************************************/
     @RequestMapping(value = ["/"], method = [RequestMethod.GET])
     fun  index(model:Model): String {
-        return url + "/index";
+        return "/index";
     }
 }
