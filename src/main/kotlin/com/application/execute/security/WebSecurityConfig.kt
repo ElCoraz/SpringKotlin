@@ -10,7 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 class WebSecurityConfig : WebSecurityConfigurerAdapter() {
      /******************************************************************************************************************/
     override fun configure(web: WebSecurity) {
-        web.ignoring().antMatchers("/v3/api-docs",
+        web.ignoring().antMatchers("/",
+                "/v3/api-docs",
                 "/configuration/ui",
                 "/swagger-resources/**",
                 "/configuration/security",
