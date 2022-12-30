@@ -73,7 +73,7 @@ class Users {
         if (bases == null) {
             return false
         }
-        val bases = bases!!.split("\\;".toRegex()).toTypedArray()
+        val bases = bases!!.split(";".toRegex()).toTypedArray()
         for (base in bases) {
             if (base == id) {
                 return true

@@ -18,7 +18,6 @@ class IndexController {
     /******************************************************************************************************************/
     @RequestMapping(value = ["/"], method = [RequestMethod.GET])
     fun index(model:Model): String {
-
         model.addAttribute("title", "first page")
         model.addAttribute("asserts", assertsService.asserts())
 
