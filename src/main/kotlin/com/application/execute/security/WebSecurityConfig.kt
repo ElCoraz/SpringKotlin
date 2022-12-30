@@ -22,23 +22,23 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     private lateinit var datasource: DataSource
     /*****************************************************************************************************************/
      @Throws(Exception::class)
-     override fun configure(http: HttpSecurity): Unit {
-         //http.csrf().disable().authorizeRequests()
-         //        .antMatchers("/bootstrap/**", "/dist/**", "/plugins/**").permitAll()
-         //        .anyRequest().authenticated()
-         //        .and()
-         //        .httpBasic()
-         //        .and()
-         //        .formLogin()
-         //        .failureUrl("/login?error")
-         //        .loginPage("/login")
-         //        .defaultSuccessUrl("/")
-         //        .permitAll()
-         //        .and()
-         //        .logout()
-         //        .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
-         //        .logoutSuccessUrl("/login")
-         //        .permitAll()*/
+     override fun configure(http: HttpSecurity) {
+         http.csrf().disable().authorizeRequests()
+                 .antMatchers("/asserts/**").permitAll()
+                 .anyRequest().authenticated()
+                 .and()
+                 .httpBasic()
+                 .and()
+                 .formLogin()
+                 .failureUrl("/login?error")
+                 .loginPage("/login")
+                 .defaultSuccessUrl("/")
+                 .permitAll()
+                 .and()
+                 .logout()
+                 .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
+                 .logoutSuccessUrl("/login")
+                 .permitAll()
     }
     /*****************************************************************************************************************/
      override fun configure(web: WebSecurity) {
