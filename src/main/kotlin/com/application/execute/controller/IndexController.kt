@@ -20,8 +20,7 @@ class IndexController {
     fun index(model:Model): String {
 
         model.addAttribute("title", "first page")
-        model.addAttribute("assertsHead", assertsService.headAsserts())
-        model.addAttribute("assertsFooter", assertsService.footerAsserts())
+        model.addAttribute("asserts", assertsService.asserts())
 
         return "/index";
     }
