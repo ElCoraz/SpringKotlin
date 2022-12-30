@@ -23,23 +23,23 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     /*****************************************************************************************************************/
      @Throws(Exception::class)
      override fun configure(http: HttpSecurity): Unit {
-         http.csrf().disable().authorizeRequests()
-                 //.antMatchers("/bootstrap/**", "/dist/**", "/plugins/**").permitAll()
-                 .anyRequest().authenticated()
-                 .and()
-                 .httpBasic()
-                 .and()
-                 //.formLogin()
-                 //.failureUrl("/login?error")
-                 //.loginPage("/login")
-                 //.defaultSuccessUrl("/")
-                 //.permitAll()
-                 //.and()
-                 .logout()
-                 .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
-                 .logoutSuccessUrl("/login")
-                 .permitAll()
-     }
+         //http.csrf().disable().authorizeRequests()
+         //        .antMatchers("/bootstrap/**", "/dist/**", "/plugins/**").permitAll()
+         //        .anyRequest().authenticated()
+         //        .and()
+         //        .httpBasic()
+         //        .and()
+         //        .formLogin()
+         //        .failureUrl("/login?error")
+         //        .loginPage("/login")
+         //        .defaultSuccessUrl("/")
+         //        .permitAll()
+         //        .and()
+         //        .logout()
+         //        .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
+         //        .logoutSuccessUrl("/login")
+         //        .permitAll()*/
+    }
     /*****************************************************************************************************************/
      override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers("/",
