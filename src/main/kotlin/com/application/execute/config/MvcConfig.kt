@@ -11,7 +11,7 @@ class MvcConfig : WebMvcConfigurer {
     /******************************************************************************************************************/
     override fun addViewControllers(registry: ViewControllerRegistry) {
         registry.addViewController("/").setViewName("index")
-        //registry.addViewController("/login").setViewName("login")
+        registry.addViewController("/login").setViewName("authorization/login")
     }
     /******************************************************************************************************************/
     override fun addResourceHandlers(registry: ResourceHandlerRegistry) {

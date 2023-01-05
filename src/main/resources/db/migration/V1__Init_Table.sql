@@ -31,7 +31,15 @@ INSERT INTO users (id, token, name, description, role, enabled, username, passwo
 VALUES
 (uuid(), uuid(), 'admin', 'admin', 'ADMIN', 1, 'admin@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
 /**********************************************************************************************************************/
+INSERT INTO users (id, token, name, description, role, enabled, username, password, createdAt, updatedAt)
+VALUES
+(uuid(), uuid(), 'user', 'user', 'USER', 1, 'user@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
+/**********************************************************************************************************************/
 INSERT INTO authorities (username, authority)
 VALUES
 ('admin@mail.com', 'ADMIN');
+/**********************************************************************************************************************/
+INSERT INTO authorities (username, authority)
+VALUES
+('user@mail.com', 'USER');
 /**********************************************************************************************************************/

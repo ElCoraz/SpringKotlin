@@ -24,7 +24,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
      @Throws(Exception::class)
      override fun configure(http: HttpSecurity) {
          http.csrf().disable().authorizeRequests()
-                 .antMatchers("/asserts/**").permitAll()
+                 .antMatchers("/asserts/**", "/images/**").permitAll()
                  .anyRequest().authenticated()
                  .and()
                  .httpBasic()
@@ -43,6 +43,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     /*****************************************************************************************************************/
      override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers("/",
+                "/market/**",
                 "/v3/api-docs",
                 "/configuration/ui",
                 "/swagger-resources/**",
