@@ -7,40 +7,27 @@
     <h1>Market</h1>
     <div class="row">
         <div class="col-sm">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+            <span th:text="${data.change}"></span>
+            <select id="locales">
+                <option value=""></option>
+                <option value="en" th:text="${data.en}"></option>
+                <option value="ru" th:text="${data.ru}"></option>
+            </select>
         </div>
     </div>
 </div>
 
 <footer th:include="fragments/footer :: footer"></footer>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            if (selectedOption !== ''){
+                window.location.replace('/market/language/' + selectedOption);
+            }
+        });
+    });
+    </script>
 </body>
 </html>

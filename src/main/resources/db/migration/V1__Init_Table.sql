@@ -7,6 +7,7 @@ CREATE TABLE users (
     id          VARCHAR(36)  NOT NULL,
     role        VARCHAR(255) NOT NULL,
     token       VARCHAR(255) NOT NULL,
+    lang        VARCHAR(255) NOT NULL,
     rules       LONGTEXT,
     bases       LONGTEXT,
     enabled     BOOLEAN      NOT NULL,
@@ -27,13 +28,13 @@ CREATE TABLE authorities (
 /**********************************************************************************************************************/
 /* Main values                                                                                                        */
 /**********************************************************************************************************************/
-INSERT INTO users (id, token, name, description, role, enabled, username, password, createdAt, updatedAt)
+INSERT INTO users (id, token, name, lang,  description, role, enabled, username, password, createdAt, updatedAt)
 VALUES
-(uuid(), uuid(), 'admin', 'admin', 'ADMIN', 1, 'admin@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
+(uuid(), uuid(), 'admin', 'admin', 'en', 'ADMIN', 1, 'admin@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
 /**********************************************************************************************************************/
-INSERT INTO users (id, token, name, description, role, enabled, username, password, createdAt, updatedAt)
+INSERT INTO users (id, token, name, lang, description, role, enabled, username, password, createdAt, updatedAt)
 VALUES
-(uuid(), uuid(), 'user', 'user', 'USER', 1, 'user@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
+(uuid(), uuid(), 'user', 'user', 'en', 'USER', 1, 'user@mail.com', '$2a$10$HCPcw0G.du/GAz6CSDoPkOINsBs69e759Tb.8do0ykaQpcTNi/TlC', now(), now());
 /**********************************************************************************************************************/
 INSERT INTO authorities (username, authority)
 VALUES
